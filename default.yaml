@@ -4,7 +4,7 @@
 config_version: "2023-12-18"
 
 schema_list:
-  - schema: lufs_flypy # 小鹤双拼
+  # - schema: lufs_flypy # 小鹤双拼
   - schema: lufs_pinyin # 朙月拼音
   # - schema: lufs_mspy # 微软双拼
   # - schema: lufs_dpy # 自然码双拼
@@ -24,7 +24,7 @@ switcher:
   option_list_separator: "/"
 
 menu:
-  page_size: 4
+  page_size: 6
 
 punctuator:
   full_shape:
@@ -46,9 +46,10 @@ recognizer:
     unicode: "^U[a-f0-9]+" # 响应 Unicode
 
 ascii_composer:
-  good_old_caps_lock: true
+  # ascii_composer/switch_key/Shift_L: commit_code
+  good_old_caps_lock:
   switch_key:
-    Shift_L: noop
+    Shift_L: commit_code
     Shift_R: commit_code # macOS 上此项无效，Windows 可用右 Shift 切换中英输入
     Control_L: noop
     Control_R: noop # macOS 上此项无效，Windows 上可自行定义
